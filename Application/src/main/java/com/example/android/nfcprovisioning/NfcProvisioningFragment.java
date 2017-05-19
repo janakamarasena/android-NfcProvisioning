@@ -25,11 +25,13 @@ import android.nfc.NfcAdapter;
 import android.nfc.NfcEvent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -198,6 +200,11 @@ public class NfcProvisioningFragment extends Fragment implements
                 mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_WIFI_PASSWORD, s);
                 break;
         }
+
+        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION, "http://192.168.8.106:8000/client-debug.apk");
+        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_SKIP_ENCRYPTION, "true");
+        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM, "myHXRCcz75r1CwXI4jevzjT98Uo");
+
     }
 
     @Override

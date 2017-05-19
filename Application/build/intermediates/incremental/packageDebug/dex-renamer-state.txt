@@ -1,0 +1,4 @@
+#Thu May 18 17:17:40 IST 2017
+base.0=/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.1_2d63459cc4eb49af9594c4a123d625b8253d2f68.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-v13/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9abf11d546d9e0ee82da86df608ced7a961b76ac">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-support-v13-25.0.1_3a0b58ddd55c884cfd37a3306b31d2c0ddceb4f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-v13/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cfb91ea7c6890336890ccb42767041af6b863e32">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_0bea2a8c228184cbdab8735bbed926b811c070f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_361651afb4d4f6455f898d491ddfbf2c07f7fae4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.1_cf79af4de16bf1e96997ad86a257bdd9dbff1a63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_fbb12c47456d104083bcb292de2fbdcbde72267d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.1_6be677198a186a4f235eee6651f9b2125c47fea7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.1_9d157a0ce58a21ee7db8f7e4e3e74a48cd3d548a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.1_030758a9ccfcf5603f4e9610bffb18b9fdb37f8e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.1_b9b8a601e46b56159eccac5e4c296801fb291577.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_2caae6b3c99832294be8afd7e71447ea3e00ca3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_decc727e433672183b82dda9358aa5980da5a57a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.1_99d6dd8e96afd3f29dd5f565b23a4cfb2379c385.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_53706ac4b39eae295e47602b49eaed72b03563c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/support-annotations-25.0.1_3093f0cbbb70c11c33652fce5a3ec66c63dbb157.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.1_e1e09a604e460bf61bc000b53b3e6857c05139ea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.0.1_2e991ead1a34c09ef90325b5acbb3e34a0a9a3bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/home/janak/Desktop/IoT/current/TEST/COSU/android-NfcProvisioning/Application/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.1_f15cb2d329232bbffe859ac75313495ace2e198f.jar" />
+    </item>
+
+</items>

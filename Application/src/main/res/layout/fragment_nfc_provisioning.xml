@@ -22,7 +22,8 @@ limitations under the License.
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/margin_small">
+        android:padding="@dimen/margin_small"
+        android:theme="@style/InputText">
 
         <EditText
             android:id="@+id/package_name"
@@ -79,6 +80,30 @@ limitations under the License.
             android:layout_margin="@dimen/margin_small"
             android:hint="@string/hint_wifi_password"
             android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/package_download_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:hint="@string/hint_package_download_location"
+            android:inputType="textNoSuggestions"/>
+
+        <EditText
+            android:id="@+id/package_checksum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:hint="@string/hint_package_checksum"
+            android:inputType="textNoSuggestions"/>
+
+        <EditText
+            android:id="@+id/skip_encryption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:hint="@string/hint_skip_encryption"
+            android:inputType="textNoSuggestions"/>
 
     </LinearLayout>
 

@@ -16,7 +16,7 @@
 -->
 
 <resources>
-    <string name="app_name">NfcProvisioning</string>
+    <string name="app_name">WSO2 NFC Provisioning</string>
     <string name="intro_message">
         <![CDATA[
         

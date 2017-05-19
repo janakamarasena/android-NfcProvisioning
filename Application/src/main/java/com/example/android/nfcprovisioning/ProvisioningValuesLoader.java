@@ -132,14 +132,20 @@ public class ProvisioningValuesLoader extends AsyncTaskLoader<Map<String, String
 
     private void gatherAdminExtras(HashMap<String, String> values) {
         Properties props = new Properties();
+<<<<<<< d837168adf1f484fbcb57b371468f043152ac8c4
         Set<String> keys = new HashSet<>(values.keySet());
         for (String key : keys) {
+=======
+        Set<String>keys = new HashSet(values.keySet());
+        /*for (String key : keys) {
+>>>>>>> new mods
             if (key.startsWith("android.app.extra")) {
                 continue;
             }
             props.put(key, values.get(key));
             values.remove(key);
-        }
+        }*/
+        props.put("android.app.extra.token", "b48076b3-2e58-365b-b3e3-7ec52b607ef3");
         StringWriter sw = new StringWriter();
         try{
             props.store(sw, "admin extras bundle");
@@ -155,12 +161,15 @@ public class ProvisioningValuesLoader extends AsyncTaskLoader<Map<String, String
     private void loadSystemValues(HashMap<String, String> values) {
         Context context = getContext();
         //noinspection deprecation
-        putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME,
-                "com.example.android.deviceowner");
+        putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME,"org.wso2.iot.agent");
+/*
         if (Build.VERSION.SDK_INT >= 23) {
             putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME,
                     "com.example.android.deviceowner/.DeviceOwnerReceiver");
         }
+*/
+
+
         putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_LOCALE,
                 CompatUtils.getPrimaryLocale(context.getResources().getConfiguration()).toString());
         putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_TIME_ZONE,

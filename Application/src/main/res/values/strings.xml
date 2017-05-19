@@ -25,5 +25,8 @@ limitations under the License.
     <string name="hint_wifi_ssid">WiFi SSID</string>
     <string name="hint_wifi_security_type">WiFi security type</string>
     <string name="hint_wifi_password">WiFi password</string>
+    <string name="hint_package_download_location">Package download location</string>
+    <string name="hint_package_checksum">Package checksum</string>
+    <string name="hint_skip_encryption">Skip encryption</string>
 
 </resources>
