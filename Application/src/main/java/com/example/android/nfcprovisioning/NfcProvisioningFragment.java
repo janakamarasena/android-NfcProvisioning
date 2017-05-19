@@ -18,24 +18,25 @@ package com.example.android.nfcprovisioning;
 
 import android.app.Activity;
 import android.app.admin.DevicePolicyManager;
-import android.content.ComponentName;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.NfcEvent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+
+import com.example.android.nfcprovisioning.Utils.TextWatcherWrapper;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -59,12 +60,15 @@ public class NfcProvisioningFragment extends Fragment implements
 
     // View references
     private EditText mEditPackageName;
-    private EditText mEditClassName;
     private EditText mEditLocale;
     private EditText mEditTimezone;
     private EditText mEditWifiSsid;
     private EditText mEditWifiSecurityType;
     private EditText mEditWifiPassword;
+    private EditText mEditPackageDownloadLocation;
+    private EditText mEditPackageChecksum;
+    private EditText mEditSkipEncryption;
+    private Context context;
 
     // Values to be set via NFC bump
     private Map<String, String> mProvisioningValues;
@@ -77,25 +81,30 @@ public class NfcProvisioningFragment extends Fragment implements
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        context = getActivity();
+
         // Retrieve view references
         mEditPackageName = (EditText) view.findViewById(R.id.package_name);
-        mEditClassName = (EditText) view.findViewById(R.id.class_name);
         mEditLocale = (EditText) view.findViewById(R.id.locale);
         mEditTimezone = (EditText) view.findViewById(R.id.timezone);
         mEditWifiSsid = (EditText) view.findViewById(R.id.wifi_ssid);
         mEditWifiSecurityType = (EditText) view.findViewById(R.id.wifi_security_type);
         mEditWifiPassword = (EditText) view.findViewById(R.id.wifi_password);
+        mEditPackageDownloadLocation = (EditText) view.findViewById(R.id.package_download_location);
+        mEditPackageChecksum = (EditText) view.findViewById(R.id.package_checksum);
+        mEditSkipEncryption = (EditText) view.findViewById(R.id.skip_encryption);
+
         // Bind event handlers
         mEditPackageName.addTextChangedListener(new TextWatcherWrapper(R.id.package_name, this));
-        mEditClassName.addTextChangedListener(new TextWatcherWrapper(R.id.class_name, this));
         mEditLocale.addTextChangedListener(new TextWatcherWrapper(R.id.locale, this));
         mEditTimezone.addTextChangedListener(new TextWatcherWrapper(R.id.timezone, this));
         mEditWifiSsid.addTextChangedListener(new TextWatcherWrapper(R.id.wifi_ssid, this));
         mEditWifiSecurityType.addTextChangedListener(
                 new TextWatcherWrapper(R.id.wifi_security_type, this));
         mEditWifiPassword.addTextChangedListener(new TextWatcherWrapper(R.id.wifi_password, this));
-        // Prior to API 23, the class name is not needed
-        mEditClassName.setVisibility(Build.VERSION.SDK_INT >= 23 ? View.VISIBLE : View.GONE);
+        mEditPackageDownloadLocation.addTextChangedListener(new TextWatcherWrapper(R.id.package_download_location, this));
+        mEditPackageChecksum.addTextChangedListener(new TextWatcherWrapper(R.id.package_checksum, this));
+        mEditSkipEncryption.addTextChangedListener(new TextWatcherWrapper(R.id.skip_encryption, this));
     }
 
     @Override
@@ -165,7 +174,7 @@ public class NfcProvisioningFragment extends Fragment implements
                 mProvisioningValues.put(
                         DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME, s);
                 break;
-            case R.id.class_name:
+            /*case R.id.class_name:
                 if (Build.VERSION.SDK_INT >= 23) {
                     if (TextUtils.isEmpty(s)) {
                         mProvisioningValues.remove(
@@ -182,7 +191,7 @@ public class NfcProvisioningFragment extends Fragment implements
                                 name.flattenToShortString());
                     }
                 }
-                break;
+                break;*/
             case R.id.locale:
                 mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_LOCALE, s);
                 break;
@@ -199,11 +208,28 @@ public class NfcProvisioningFragment extends Fragment implements
             case R.id.wifi_password:
                 mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_WIFI_PASSWORD, s);
                 break;
+            case R.id.package_download_location:
+                mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION, s);
+                break;
+            case R.id.package_checksum:
+                mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM, s);
+                break;
+            case R.id.skip_encryption:
+                if (Build.VERSION.SDK_INT >= 23) {
+                    if (TextUtils.isEmpty(s)) {
+                        mProvisioningValues.remove(
+                                DevicePolicyManager.EXTRA_PROVISIONING_SKIP_ENCRYPTION);
+                    } else {
+                        mProvisioningValues.put(
+                                DevicePolicyManager.EXTRA_PROVISIONING_SKIP_ENCRYPTION, s);
+                    }
+                }
+                break;
         }
 
-        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION, "http://192.168.8.106:8000/client-debug.apk");
-        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_SKIP_ENCRYPTION, "true");
-        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM, "myHXRCcz75r1CwXI4jevzjT98Uo");
+//        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION, "http://192.168.8.106:8000/client-debug.apk");
+//        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_SKIP_ENCRYPTION, "true");
+//        mProvisioningValues.put(DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM, "myHXRCcz75r1CwXI4jevzjT98Uo");
 
     }
 
@@ -222,11 +248,6 @@ public class NfcProvisioningFragment extends Fragment implements
             //noinspection deprecation
             mEditPackageName.setText(values.get(
                     DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME));
-            if (Build.VERSION.SDK_INT >= 23) {
-                ComponentName name = ComponentName.unflattenFromString(values.get(
-                        DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME));
-                mEditClassName.setText(name.getClassName());
-            }
             mEditLocale.setText(values.get(DevicePolicyManager.EXTRA_PROVISIONING_LOCALE));
             mEditTimezone.setText(values.get(DevicePolicyManager.EXTRA_PROVISIONING_TIME_ZONE));
             mEditWifiSsid.setText(values.get(DevicePolicyManager.EXTRA_PROVISIONING_WIFI_SSID));
@@ -234,6 +255,12 @@ public class NfcProvisioningFragment extends Fragment implements
                     DevicePolicyManager.EXTRA_PROVISIONING_WIFI_SECURITY_TYPE));
             mEditWifiPassword.setText(values.get(
                     DevicePolicyManager.EXTRA_PROVISIONING_WIFI_PASSWORD));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                mEditSkipEncryption.setText(values.get(
+                        DevicePolicyManager.EXTRA_PROVISIONING_SKIP_ENCRYPTION));
+            }else {
+                mEditSkipEncryption.setText(values.get("false"));
+            }
         }
     }
 

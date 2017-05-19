@@ -26,6 +26,7 @@ import android.os.Environment;
 import android.support.v4.content.AsyncTaskLoader;
 
 import com.example.android.common.logger.Log;
+import com.example.android.nfcprovisioning.Utils.CompatUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -59,8 +60,8 @@ public class ProvisioningValuesLoader extends AsyncTaskLoader<Map<String, String
     @Override
     public Map<String, String> loadInBackground() {
         HashMap<String, String> values = new HashMap<>();
-        loadFromDisk(values);
-        gatherAdminExtras(values);
+//        loadFromDisk(values);
+        setAdminAccessToken(values);
         loadSystemValues(values);
         return values;
     }
@@ -96,7 +97,7 @@ public class ProvisioningValuesLoader extends AsyncTaskLoader<Map<String, String
         mValues = null;
     }
 
-    private void loadFromDisk(HashMap<String, String> values) {
+    /*private void loadFromDisk(HashMap<String, String> values) {
         File directory = Environment.getExternalStorageDirectory();
         File file = new File(directory, FILENAME);
         if (!file.exists()) {
@@ -109,9 +110,9 @@ public class ProvisioningValuesLoader extends AsyncTaskLoader<Map<String, String
             e.printStackTrace();
             Log.e(TAG, "Error loading data from " + file, e);
         }
-    }
+    }*/
 
-    private void loadFromFile(HashMap<String, String> values, File file) throws IOException {
+    /*private void loadFromFile(HashMap<String, String> values, File file) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while (null != (line = reader.readLine())) {
@@ -128,23 +129,34 @@ public class ProvisioningValuesLoader extends AsyncTaskLoader<Map<String, String
                 Log.d(TAG, key + "=" + value);
             }
         }
-    }
+    }*/
 
-    private void gatherAdminExtras(HashMap<String, String> values) {
+    /*private void gatherAdminExtras(HashMap<String, String> values) {
         Properties props = new Properties();
-<<<<<<< d837168adf1f484fbcb57b371468f043152ac8c4
-        Set<String> keys = new HashSet<>(values.keySet());
-        for (String key : keys) {
-=======
         Set<String>keys = new HashSet(values.keySet());
-        /*for (String key : keys) {
->>>>>>> new mods
+        *//*for (String key : keys) {
             if (key.startsWith("android.app.extra")) {
                 continue;
             }
             props.put(key, values.get(key));
             values.remove(key);
-        }*/
+        }*//*
+        props.put("android.app.extra.token", "b48076b3-2e58-365b-b3e3-7ec52b607ef3");
+        StringWriter sw = new StringWriter();
+        try{
+            props.store(sw, "admin extras bundle");
+            values.put(DevicePolicyManager.EXTRA_PROVISIONING_ADMIN_EXTRAS_BUNDLE,
+                    sw.toString());
+            Log.d(TAG, "Admin extras bundle=" + values.get(
+                    DevicePolicyManager.EXTRA_PROVISIONING_ADMIN_EXTRAS_BUNDLE));
+        } catch (IOException e) {
+            Log.e(TAG, "Unable to build admin extras bundle");
+        }
+    }*/
+
+
+    private void setAdminAccessToken(HashMap<String, String> values) {
+        Properties props = new Properties();
         props.put("android.app.extra.token", "b48076b3-2e58-365b-b3e3-7ec52b607ef3");
         StringWriter sw = new StringWriter();
         try{
@@ -162,14 +174,10 @@ public class ProvisioningValuesLoader extends AsyncTaskLoader<Map<String, String
         Context context = getContext();
         //noinspection deprecation
         putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME,"org.wso2.iot.agent");
-/*
         if (Build.VERSION.SDK_INT >= 23) {
-            putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME,
-                    "com.example.android.deviceowner/.DeviceOwnerReceiver");
+            putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_SKIP_ENCRYPTION,
+                    "true");
         }
-*/
-
-
         putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_LOCALE,
                 CompatUtils.getPrimaryLocale(context.getResources().getConfiguration()).toString());
         putIfMissing(values, DevicePolicyManager.EXTRA_PROVISIONING_TIME_ZONE,
